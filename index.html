@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kjk의 경기규칙 IFAB Q&A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* A little extra for the futuristic vibe */
+        .tab-button.active {
+            border-color: #22d3ee; /* cyan-400 */
+            color: #22d3ee;
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+        }
+        .accordion-item {
+            border: 1px solid #334155; /* slate-700 */
+        }
+        .accordion-header:hover, .accordion-header:focus {
+            background-color: #1e293b; /* slate-800 */
+        }
+        .scroll-target {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-target.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- Header -->
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-fuchsia-500 py-2">kjk의 경기규칙 IFAB Q&A</h1>
+            <p class="text-xl md:text-2xl text-slate-400 mt-2">스로인 & 골킥 & 코너킥</p>
+        </header>
+
+        <!-- Tabs Navigation -->
+        <div id="tabs" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+            <button data-target="throw-in-content" class="tab-button active py-2 px-4 md:py-3 md:px-6 rounded-lg border-2 border-slate-600 font-semibold transition-all duration-300">⚽ 15조 스로인</button>
+            <button data-target="goal-kick-content" class="tab-button py-2 px-4 md:py-3 md:px-6 rounded-lg border-2 border-slate-600 font-semibold transition-all duration-300">🥅 16조 골킥</button>
+            <button data-target="corner-kick-content" class="tab-button py-2 px-4 md:py-3 md:px-6 rounded-lg border-2 border-slate-600 font-semibold transition-all duration-300">🚩 17조 코너킥</button>
+        </div>
+
+        <!-- Content Panes -->
+        <main>
+            <!-- Pane for 스로인 -->
+            <div id="throw-in-content" class="tab-content space-y-4">
+                <!-- Accordion items will be injected here from the template -->
+            </div>
+            <!-- Pane for 골킥 -->
+            <div id="goal-kick-content" class="tab-content hidden space-y-4">
+                <!-- Accordion items will be injected here from the template -->
+            </div>
+            <!-- Pane for 코너킥 -->
+            <div id="corner-kick-content" class="tab-content hidden space-y-4">
+                <!-- Accordion items will be injected here from the template -->
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 py-4 border-t border-slate-700 text-slate-500">
+            <p>내용의 출처는 "IFAB의 Q&A"</p>
+        </footer>
+    </div>
+    
+    <script>
+    const qaData = {
+        "throw-in": [
+            { id: 1, title: "스로인 시 발의 위치가 정확한지에 대한 판정", en_q: "At the moment of delivering the ball at a throw-in, a player has one foot outside the field of play (behind the touchline) and one foot partly inside the field of play (with the heel touching the touchline). What is the decision if the ball is thrown and enters the field of play?", ko_q: "스로인을 하는 순간, 선수의 한쪽 발은 경기장 밖(터치라인 뒤쪽)에 있고 다른 한쪽 발은 일부가 경기장 안(터치라인에 뒤꿈치가 닿은 상태)에 있습니다. 볼을 던져서 경기장 안으로 들어왔다면 어떤 판정을 내려야 합니까?", en_a: "The referee allows play to continue as no offence has been committed. According to Law 15, part of each foot must be on the touchline or on the ground outside the touchline, so the throw-in has been taken correctly.", ko_a: "주심은 아무런 반칙이 발생하지 않았으므로 플레이를 계속하도록 허용합니다. 경기규칙 제15조에 따르면, 각 발의 일부가 터치라인 위 또는 터치라인 밖의 지면에 있어야 하므로 해당 스로인은 정확하게 실시된 것입니다.", key_point: "스로인 시 선수는 반드시 두 발의 일부가 터치라인 위 또는 터치라인 밖의 지면에 있어야 합니다" },
+            { id: 2, title: "심판을 맞고 볼이 경기장 밖으로 나갔을 때 재개 방법", en_q: "The ball is kicked by a Team A player and is going towards a Team B player when it deflects off the referee and leaves the field of play by the touchline without touching any other player. What is the correct decision?", ko_q: "A팀 선수가 킥을 한 볼이 B팀 선수에게 향하던 중 주심을 맞고 굴절되어, 다른 어떤 선수도 터치하지 않은 채 터치라인 밖 경기장으로 나갔습니다. 올바른 판정은 무엇입니까?", en_a: "A throw-in is awarded to Team B, as the Team A player was the last to touch the ball before it went out of play. Play cannot be restarted with a dropped ball because the ball did not remain on the field of play after touching the referee.", ko_a: "B팀에게 스로인이 주어집니다. 이는 볼이 아웃 오브 플레이가 되기 전 마지막으로 볼을 터치한 선수가 A팀 선수이기 때문입니다. 볼이 주심을 맞은 후 경기장 안에 남아있지 않았기 때문에 드롭볼로 플레이를 재개할 수 없습니다.", key_point: "볼이 심판진을 맞고 경기장 안에 있는 상태에서 어느 한 팀이 유망한 공격을 시작하거나, 볼의 소유 팀이 바뀌는 등의 상황이 발생할 때만 드롭볼로 재개하며, 볼이 완전히 경기장 밖으로 나간 경우에는 일반적인 아웃 오브 플레이 규칙을 따릅니다" },
+            { id: 3, title: "잘못된 팀이 스로인을 실시했을 때의 처리", en_q: "The ball goes out of play while two players are challenging for it near the touchline. The assistant referee indicates that the throw-in is awarded to Team A but a Team B player quickly picks up the ball and throws it onto the field before the referee intervenes. What is the correct decision?", ko_q: "터치라인 근처에서 두 선수가 볼을 다투던 중 볼이 아웃 오브 플레이 되었습니다. 부심은 A팀의 스로인을 지적했으나, 주심이 개입하기 전에 B팀 선수가 재빨리 볼을 집어 들어 경기장 안으로 던졌습니다. 올바른 판정은 무엇입니까?", en_a: "The throw-in is retaken by Team A from the same position. There is no disciplinary sanction for the Team B player.", ko_a: "같은 위치에서 A팀이 스로인을 다시 실시합니다. B팀 선수에게는 별도의 징계 조치가 부과되지 않습니다.", key_point: "스로인은 볼 전체가 터치라인을 넘어갔을 때 마지막으로 터치한 선수의 상대팀에게 주어집니다" },
+            { id: 4, title: "던지지 않고 떨어뜨린 볼에 대한 스로인 위반", en_q: "While taking a throw-in, a player holds the ball over the head and then drops it onto the ground inside the field of play. What is the correct decision?", ko_q: "스로인을 하는 동안, 선수가 볼을 머리 위로 잡고 있다가 경기장 안의 지면으로 떨어뜨렸습니다. 올바른 판정은 무엇입니까?", en_a: "Law 15 clearly states that the thrower must ‘throw’ the ball. If the ball is ‘dropped’ and not thrown, the throw-in is not taken correctly. In this case, the opposing team will take the throw-in.", ko_a: "경기규칙 제15조는 스로인을 하는 선수가 반드시 볼을 ‘던져야’ 한다고 명시하고 있습니다. 볼을 던지지 않고 ‘떨어뜨렸다면’ 스로인이 정확하게 실시되지 않은 것입니다. 이 경우 상대팀이 스로인을 하게 됩니다.", key_point: "볼을 던지는 순간 선수는 반드시 두 손으로 머리 뒤로부터 머리 위를 지나도록 하여 던져야 합니다" },
+            { id: 5, title: "스로인 전 지연 행위에 대한 처벌 및 재개", en_q: "A few minutes before the end of the second half, Team A, which is leading by one goal, is awarded a throw-in. A Team A player slowly walks to the touchline, picks up the ball, and excessively delays taking the throw-in. What is the correct decision if the referee intervenes before the ball is thrown?", ko_q: "후반전 종료 몇 분 전, 한 골 차로 앞서고 있는 A팀에게 스로인이 주어졌습니다. A팀 선수가 천천히 터치라인으로 걸어가 볼을 집어 들고 스로인 실시를 과도하게 지연시켰습니다. 볼을 던지기 전에 주심이 개입했다면 올바른 판정은 무엇입니까?", en_a: "The player is cautioned (yellow card) for delaying the restart of play. Since the ball has not entered the field of play, the thrower’s offence does not change how play is restarted so the throw-in is taken by the same team.", ko_a: "플레이 재개를 지연시킨 이유로 해당 선수에게 경고(옐로카드)가 주어집니다. 볼이 아직 경기장 안으로 들어오지 않았으므로, 던지는 선수의 반칙이 플레이 재개 방법을 바꾸지 않으며 스로인은 같은 팀(A팀)에 의해 다시 실시됩니다.", key_point: "플레이의 재개를 지연한 선수는 경고를 받으며, 인플레이가 되기 전의 반칙으로는 플레이 재개 방법이 달라지지 않습니다" },
+            { id: 6, title: "발이 경기장 내부에 완전히 들어온 경우의 스로인 판정", en_q: "At the moment of delivering the ball at a throw-in, a player has one foot outside the field of play and the other foot fully inside the field (not touching the touchline). The ball then enters the field and is intercepted by an opponent. What is the correct decision?", ko_q: "스로인을 하는 순간, 선수의 한쪽 발은 경기장 밖에 있고 다른 쪽 발은 경기장 안에 완전히(터치라인에 닿지 않음) 들어와 있습니다. 이후 볼이 경기장으로 들어왔고 상대 선수가 이를 가로챘습니다. 올바른 판정은 무엇입니까?", en_a: "According to Law 15, the thrower must have part of each foot on the touchline or on the ground outside the touchline. Although the throw-in was not taken correctly, the referee may allow play to continue if the opposing team will benefit from the advantage.", ko_a: "경기규칙 제15조에 따르면, 스로인을 하는 선수는 반드시 두 발의 일부가 터치라인 위 또는 터치라인 밖의 지면에 있어야 합니다. 비록 스로인이 정확하게 실시되지 않았으나, 주심은 상대팀이 어드밴티지를 통해 이득을 볼 수 있다면 플레이를 계속하도록 허용할 수 있습니다.", key_point: "스로인 절차를 위반한 경우 원칙적으로는 상대팀에게 스로인이 주어지지만, 주심은 상황에 따라 어드밴티지를 적용할 수 있습니다" },
+            { id: 7, title: "자기 팀 골문으로 직접 들어간 스로인 볼의 처리", en_q: "A player takes a quick throw-in and passes the ball towards their own goalkeeper in their penalty area. The goalkeeper is far from the goal line, reacts too late and does not touch the ball before it enters their team’s own goal. What is the correct decision?", ko_q: "선수가 빠른 스로인을 실시하여 자신의 페널티 에어리어 안에 있는 자기 팀 골키퍼에게 볼을 패스했습니다. 골키퍼가 골라인에서 멀리 떨어져 있었고 반응이 너무 늦어, 볼이 자기 팀 골문으로 들어가기 전까지 터치하지 못했습니다. 올바른 판정은 무엇입니까?", en_a: "The referee awards a corner kick to the opposing team because a goal cannot be scored directly from a throw-in.", ko_a: "주심은 상대팀에게 코너킥을 부여합니다. 스로인으로부터는 직접 득점이 될 수 없기 때문입니다.", key_point: "스로인한 볼이 다른 선수의 터치 없이 던진 선수의 골문에 직접 들어가면 상대팀에게 코너킥이 주어집니다" },
+            { id: 8, title: "볼이 경기장에 들어가기 전 지면에 먼저 닿은 경우", en_q: "A player takes a long throw-in to a team-mate who is standing near the touchline, in the opponents’ half, far away from the thrower. After the ball is thrown, it bounces off the ground outside the field of play and then enters the field. What is the correct decision?", ko_q: "선수가 멀리 있는 상대 진영 터치라인 근처의 동료에게 롱 스로인을 했습니다. 볼을 던진 후, 볼이 경기장 밖 지면에 먼저 바운드된 뒤 경기장 안으로 들어갔습니다. 올바른 판정은 무엇입니까?", en_a: "If the ball touches the ground before entering the field of play, the throw-in is retaken by the same team from the same position (it does not have to be taken by the same player).", ko_a: "볼이 경기장 안으로 들어오기 전에 지면에 닿았다면, 같은 위치에서 같은 팀이 스로인을 다시 실시합니다 (반드시 같은 선수가 던져야 하는 것은 아닙니다).", key_point: "스로인한 볼이 경기장 안으로 들어오기 전에 지면에 닿는다면 같은 지점에서 같은 팀이 다시 실시합니다" },
+            { id: 9, title: "상대 선수가 방해하고 스로인 선수가 볼을 상대에게 던진 경우", en_q: "While a player of Team A is taking a throw-in, an opponent (Team B) remains closer than two metres from the touchline, stands in front of the thrower and interferes with the restart of play. The thrower gets irritated and deliberately throws the ball at the opponent. What is the correct decision?", ko_q: "A팀 선수가 스로인을 하는 동안, 상대 선수(B팀)가 터치라인에서 2m 이내에 머물며 스로인 선수 앞에 서서 플레이 재개를 방해했습니다. 스로인 선수는 짜증이 나서 볼을 상대 선수에게 의도적으로 던졌습니다. 올바른 판정은 무엇입니까?", en_a: "Both players receive appropriate disciplinary sanctions: Team B player is cautioned (yellow card) for unsporting behaviour. Team A player is cautioned (yellow card) for unsporting behaviour (if the ball was thrown in a reckless manner) or sent off (red card) for violent conduct (if the thrower used excessive force).", ko_a: "두 선수 모두 적절한 징계 조치를 받습니다: B팀 선수는 반스포츠적 행위로 경고(옐로카드)를 받습니다. A팀 선수는 무모한 태도로 볼을 던졌다면 반스포츠적 행위로 경고(옐로카드)를 받거나, 과도한 힘을 사용하여 던졌다면 난폭한 행위로 퇴장(레드카드) 조치됩니다.", key_point: "스로인 시 2m 이내로 다가가 방해하는 선수는 경고 대상이며, 상대에게 물체를 던지는 행위는 그 강도에 따라 경고 또는 퇴장으로 처벌됩니다." },
+            { id: 10, title: "스로인 시 발이 경기장 안에 완전히 들어간 경우", en_q: "At the moment of delivering the ball at a throw-in, a player has one foot outside the field of play and one foot fully inside the field (not touching the touchline). The throw-in goes to a team-mate. What is the correct decision?", ko_q: "스로인을 하는 순간, 선수의 한쪽 발은 경기장 밖에 있고 다른 쪽 발은 경기장 안에 완전히(터치라인에 닿지 않음) 들어와 있습니다. 스로인된 볼이 동료에게 전달되었습니다. 올바른 판정은 무엇입니까?", en_a: "According to Law 15, the thrower must have part of each foot on the touchline or on the ground outside the touchline. Therefore, the throw-in was not taken correctly and it is awarded to the opposing team from the same position.", ko_a: "경기규칙 제15조에 따르면, 스로인을 하는 선수는 반드시 두 발의 일부가 터치라인 위 또는 터치라인 밖의 지면에 있어야 합니다. 따라서 스로인이 정확하게 실시되지 않았으며, 같은 위치에서 상대팀에게 스로인이 주어집니다.", key_point: "스로인 시 두 발은 반드시 터치라인 위나 경기장 밖 지면에 있어야 하며, 이를 위반하면 상대팀에게 스로인이 넘어갑니다" },
+            { id: 11, title: "스로인 시 뒤꿈치가 터치라인에 닿은 경우", en_q: "At the moment of delivering the ball, the thrower has both feet inside the field of play with the heels touching the touchline. After that, the ball touches the ground and goes to a team-mate. What is the correct decision?", ko_q: "볼을 던지는 순간, 스로인 선수의 두 발이 경기장 안에 들어가 있으나 뒤꿈치는 터치라인에 닿아 있습니다. 그 후 볼이 지면에 닿고 동료 선수에게 전달되었습니다. 올바른 판정은 무엇입니까?", en_a: "As long as part of each foot is touching the touchline (or the ground behind the line), the throw-in is taken correctly (regardless of where the rest of each foot is). No offence has been committed, so the referee allows play to continue.", ko_a: "각 발의 일부가 터치라인(또는 라인 뒤쪽 지면)에 닿아 있는 한, 발의 나머지 부분이 어디에 있든 상관없이 스로인은 정확하게 실시된 것입니다. 아무런 반칙이 없으므로 주심은 플레이를 계속하도록 허용합니다.", key_point: "발의 일부라도 터치라인 위나 밖 지면에 닿아 있다면 정확한 스로인 위치로 간주됩니다" },
+            { id: 12, title: "볼이 나간 지점에서 멀리 이동하여 스로인한 경우", en_q: "The ball goes out for a throw-in. A player picks up the ball nearest to where it left the field of play, moves 10 metres down the touchline towards the opponents’ goal and then throws the ball to a team-mate. What is the correct decision?", ko_q: "볼이 터치라인을 벗어나 스로인이 선언되었습니다. 선수가 볼이 나간 지점 근처에서 볼을 주워 상대 팀 골문을 향해 터치라인을 따라 10m를 이동한 뒤 동료에게 던졌습니다. 올바른 판정은 무엇입니까?", en_a: "The referee awards a throw-in to the opposing team that must be taken from the correct (original) position.", ko_a: "주심은 상대팀에게 스로인을 부여하며, 이는 원래 볼이 나갔던 정확한 위치에서 실시되어야 합니다.", key_point: "스로인은 반드시 볼이 경기장을 나간 지점에서 실시해야 합니다" },
+            { id: 13, title: "상대 선수가 언어적으로 방해한 경우", en_q: "While a player is taking a throw-in, an opponent verbally distracts the thrower and shouts at them. What is the correct decision?", ko_q: "선수가 스로인을 하는 동안, 상대 선수가 소리를 지르며 언어적으로 스로인 선수의 주의를 분산시켰습니다. 올바른 판정은 무엇입니까?", en_a: "The opponent is cautioned (yellow card) for unsporting behaviour. If the throw-in has been taken, an indirect free kick is awarded from the place where the offender was standing.", ko_a: "상대 선수는 반스포츠적 행위로 경고(옐로카드)를 받습니다. 만약 스로인이 이미 실시되었다면, 반칙 선수가 서 있던 지점에서 간접 프리킥이 주어집니다.", key_point: "스로인을 하는 선수에게 부당하게 혼란을 주거나 방해하는 상대 선수는 반스포츠적 행위로 경고를 받습니다" },
+            { id: 14, title: "스로인 도중 한쪽 발을 든 경우", en_q: "A player lifts one foot off the ground while taking a throw-in and the ball enters the field of play. What is the correct decision?", ko_q: "선수가 스로인을 하는 도중 한쪽 발을 지면에서 떼었으며, 볼은 경기장 안으로 들어왔습니다. 올바른 판정은 무엇입니까?", en_a: "The throw-in is retaken by the opposing team because the Laws of the Game require the thrower to have part of both feet on/touching the ground (on or behind the touchline) at the moment of delivering the ball.", ko_a: "상대팀이 스로인을 다시 실시합니다. 경기규칙은 볼을 던지는 순간에 스로인 선수의 두 발 일부가 지면(터치라인 위 또는 뒤쪽)에 붙어 있거나 닿아 있어야 한다고 규정하고 있기 때문입니다.", key_point: "볼을 던지는 순간 스로인 선수의 두 발 일부는 반드시 지면에 닿아 있어야 합니다" },
+            { id: 15, title: "볼이 나간 후 발생한 무모한 태클의 조치", en_q: "A defender commits a reckless tackle against an attacker after the ball has been touched by the attacker and gone out over the touchline. What is the correct decision?", ko_q: "공격수가 볼을 터치하여 터치라인 밖으로 나간 직후, 수비수가 공격수에게 무모한 태클을 범했습니다. 올바른 판정은 무엇입니까?", en_a: "The offender is cautioned (yellow card) for the reckless challenge even though it occurred after the ball was out of play. However, play is restarted with a throw-in for the defending team because the referee cannot award a free kick as the ball was outside the field of play at the time of the challenge.", ko_a: "비록 볼이 아웃 오브 플레이가 된 후에 발생했더라도, 무모한 도전을 한 반칙 선수에게는 경고(옐로카드)가 주어집니다. 하지만 도전 당시 볼이 이미 경기장 밖에 있었으므로 프리킥을 부여할 수 없으며, 플레이는 수비팀의 스로인으로 재개됩니다.", key_point: "볼이 아웃 오브 플레이인 상황에서 발생한 반칙으로는 플레이 재개 방법이 달라지지 않으며, 주심은 해당 선수에게 징계 조치만 취합니다" },
+            { id: 16, title: "스로인 상황에서의 오프사이드 및 직접 득점 여부", en_q: "Team A player takes a throw-in and throws the ball towards the opponents’ penalty area. An attacker (Team A) attempts to take a shot but fails to kick the ball. The attacker’s movement confuses the goalkeeper (Team B) and the ball enters the goal (without touching any player except the thrower). What is the correct decision if the attacker was in an offside position at the moment the ball was thrown?", ko_q: "A팀 선수가 상대팀 페널티 에어리어 쪽으로 스로인을 했습니다. A팀 공격수가 슛을 시도했으나 볼을 맞히지 못했습니다. 공격수의 움직임에 B팀 골키퍼가 혼란을 겪었고, 볼은 스로인 선수 외에 어떤 선수도 터치하지 않은 채 골문으로 들어갔습니다. 볼을 던지는 순간 공격수가 오프사이드 위치에 있었다면 올바른 판정은 무엇입니까?", en_a: "There is no offside offence because the attacker received the ball directly from a throw-in. As a goal cannot be scored directly from a throw-in, the referee awards a goal kick to Team B.", ko_a: "공격수가 스로인으로부터 직접 볼을 받았으므로 오프사이드 반칙이 아닙니다. 또한 스로인으로부터는 직접 득점이 될 수 없으므로, 주심은 B팀에게 골킥을 부여합니다.", key_point: "스로인으로 직접 볼을 받으면 오프사이드 반칙이 아니며, 스로인한 볼이 다른 선수의 터치 없이 상대 골문에 직접 들어가면 골킥으로 재개합니다" },
+            { id: 17, title: "유망한 공격을 저지하기 위한 재차 터치 반칙", en_q: "A player takes a throw-in correctly. As an opponent will get the ball before the thrower's team-mates, the thrower runs and kicks the ball away to stop a promising attack. What is the correct decision?", ko_q: "선수가 스로인을 정확하게 실시했습니다. 동료 선수보다 상대 선수가 먼저 볼을 잡을 것 같자, 스로인 선수가 달려가 볼을 차내어 유망한 공격을 저지했습니다. 올바른 판정은 무엇입니까?", en_a: "The thrower touched the ball again before it had touched another player. The referee awards an indirect free kick to the opposing team from the place where the second touch occurred. The offender is cautioned (yellow card) for stopping a promising attack.", ko_a: "스로인 선수가 다른 선수가 터치하기 전에 볼을 다시 터치했습니다. 주심은 두 번째 터치가 일어난 지점에서 상대팀에게 간접 프리킥을 부여합니다. 또한 유망한 공격을 저지한 반칙 선수에게는 경고(옐로카드) 조치를 합니다.", key_point: "스로인을 한 선수는 다른 선수가 볼을 터치할 때까지 다시 터치할 수 없으며, 이를 통해 유망한 공격을 저지하면 경고를 받습니다" },
+            { id: 18, title: "스로인 볼의 직접 득점을 핸드볼로 막은 경우", en_q: "Team A player takes a throw-in and throws the ball towards the opponents’ penalty area. The ball is going directly into the goal and Team B player (not a goalkeeper) handles the ball and prevents it from entering the goal. What is the correct decision?", ko_q: "A팀 선수가 상대팀 페널티 에어리어 쪽으로 스로인을 했습니다. 볼이 골문으로 직접 들어가려 하자, (골키퍼가 아닌) B팀 선수가 손으로 볼을 건드려 골문 안으로 들어가는 것을 막았습니다. 올바른 판정은 무엇입니까?", en_a: "The referee awards a penalty kick and cautions (yellow card) Team B player for unsporting behaviour. The offender cannot be sent off (red card) for denying a goal because a goal cannot be scored directly from a throw-in (if the player had not touched the ball and the ball had entered the goal, the goal kick would have been awarded).", ko_a: "주심은 페널티킥을 부여하고 B팀 선수에게 반스포츠적 행위로 경고(옐로카드)를 줍니다. 스로인으로는 직접 득점이 불가능하므로, 득점 저지(DOGSO)를 이유로 퇴장(레드카드)시킬 수는 없습니다 (만약 선수가 볼을 건드리지 않아 그대로 들어갔다면 득점이 아닌 골킥이 주어졌을 것입니다).", key_point: "스로인으로는 직접 득점이 될 수 없으므로 이를 핸드볼로 막아도 명백한 득점 기회 저지(DOGSO)에 해당하지 않아 경고로 처벌합니다." },
+            { id: 19, title: "볼을 다시 플레이하기 위해 상대에게 던진 경우", en_q: "When taking a throw-in correctly, a player from Team A deliberately throws the ball at an opponent to play the ball again. What is the referee’s decision?", ko_q: "A팀 선수가 스로인을 정확하게 실시하면서, 볼을 다시 플레이하기 위해 의도적으로 상대 선수에게 볼을 던졌습니다. 주심의 판정은 무엇입니까?", en_a: "The referee allows play to continue – it is not an offence unless the ball was thrown in a careless or reckless manner or using excessive force, in which event a direct free kick is awarded to Team B and Team A player sanctioned accordingly.", ko_a: "주심은 플레이를 계속하도록 허용합니다. 볼을 조심성 없거나 무모한 태도, 또는 과도한 힘을 사용하여 던진 것이 아니라면 반칙이 아닙니다. 만약 그러한 태도로 던졌다면 B팀에게 직접 프리킥이 주어지고 A팀 선수에게는 그에 따른 징계가 내려집니다.", key_point: "스로인 시 다시 플레이할 목적으로 상대에게 볼을 던지는 것은 정당한 행위이나, 그 태도가 무모하거나 과도한 힘을 사용해서는 안 됩니다." },
+            { id: 20, title: "동료의 스로인을 골키퍼가 직접 손으로 잡은 경우", en_q: "A goalkeeper touches the ball with the hand/arm inside their penalty area after receiving the ball directly from a throw-in taken by a team-mate. What is the referee’s decision?", ko_q: "골키퍼가 동료 선수가 실시한 스로인을 직접 받아 자신의 페널티 에어리어 안에서 손/팔로 볼을 터치했습니다. 주심의 판정은 무엇입니까?", en_a: "The goalkeeper is not permitted to handle the ball – an indirect free kick is awarded to the opposing team but there is no disciplinary sanction.", ko_a: "골키퍼는 동료가 스로인한 볼을 직접 손으로 다룰 수 없습니다. 상대팀에게 간접 프리킥이 주어지나, 이로 인한 별도의 징계 조치는 없습니다.", key_point: "골키퍼가 동료 선수가 스로인한 볼을 직접 받은 후 손으로 터치하면 간접 프리킥으로 처벌됩니다." },
+            { id: 21, title: "스로인한 볼이 경기장에 들어가기 전 지면에 닿은 경우", en_q: "After the throw-in, the ball touches the ground before entering the field of play. How is play restarted?", ko_q: "스로인을 한 후, 볼이 경기장 안으로 들어오기 전에 지면에 먼저 닿았습니다. 플레이는 어떻게 재개됩니까?", en_a: "The throw-in is retaken by the same team from the same position.", ko_a: "같은 위치에서 같은 팀이 스로인을 다시 실시합니다.", key_point: "스로인한 볼이 경기장에 들어오기 전에 지면에 닿으면 같은 지점에서 다시 실시합니다." },
+            { id: 22, title: "스로인 절차 위반 시 재개 방법", en_q: "How is play restarted if a throw-in was not taken correctly?", ko_q: "스로인이 정확한 절차에 따라 실시되지 않았다면 플레이는 어떻게 재개됩니까?", en_a: "If the ball entered the field of play, the throw-in is awarded to the opposing team. If the ball did not enter the field of play, the throw-in is retaken by the same team.", ko_a: "볼이 경기장 안으로 들어왔다면 상대팀에게 스로인이 주어집니다. 만약 볼이 경기장 안으로 들어오지 않았다면 같은 팀이 다시 스로인을 실시합니다.", key_point: "정확한 절차에 따르지 않은 스로인은 상대팀에게 주어집니다." },
+            { id: 23, title: "상대 선수가 2m 이내에서 방해하는 경우의 처벌", en_q: "An opponent unfairly distracts or impedes the thrower, including moving closer than 2 m (2 yds). What is the referee’s decision?", ko_q: "상대 선수가 스로인 지점에서 2m 이내로 다가오는 것을 포함하여, 스로인하는 선수를 부당하게 혼란스럽게 하거나 방해했습니다. 주심의 판정은 무엇입니까?", en_a: "The opposing player is cautioned (yellow card, YC) for unsporting behaviour. If the throw-in has been taken, an indirect free kick is awarded.", ko_a: "상대 선수에게 반스포츠적 행위로 경고(옐로카드, YC)를 줍니다. 만약 스로인이 이미 실시되었다면 간접 프리킥이 주어집니다.", key_point: "스로인 지점에서 2m보다 더 가까이 다가와 방해하는 상대 선수는 경고를 받으며, 경기가 재개되었다면 간접 프리킥이 선언됩니다" }
+        ],
+        "goal-kick": [
+            { id: 1, title: "골킥 시 재차 터치 반칙과 어드밴티지 적용", en_q: "While taking a goal kick, the goalkeeper kicks the ball only a few metres. As an opponent then enters the penalty area and runs towards the ball, the goalkeeper kicks the ball again (before it has touched any other player). This second touch prevents the opponent from gaining control of the ball, denying them an obvious goal-scoring opportunity; however, the ball rebounds off the opponent’s leg and goes into the goal. What is the correct decision?", ko_q: "골킥을 하는 동안, 골키퍼가 볼을 단 몇 미터만 킥했습니다. 그 후 상대 선수가 페널티 에어리어에 진입하여 볼을 향해 달려오자, 골키퍼가 (다른 어떤 선수도 터치하기 전에) 볼을 다시 킥했습니다. 이 두 번째 터치로 상대 선수가 볼의 소유권을 얻는 것을 방해하여 명백한 득점 기회를 저지했으나, 볼은 상대 선수의 다리에 맞고 굴절되어 골문 안으로 들어갔습니다. 올바른 판정은 무엇입니까?", en_a: "The referee applies the advantage and awards a goal. The goalkeeper is cautioned (yellow card) but is not sent off because the obvious goal-scoring opportunity was restored.", ko_a: "주심은 어드밴티지를 적용하여 득점을 인정합니다. 골키퍼는 경고(옐로카드)를 받지만, 명백한 득점 기회가 회복되었으므로 퇴장당하지는 않습니다.", key_point: "명백한 득점 기회를 저지하는 반칙이 발생했더라도 주심이 어드밴티지를 적용하여 즉시 득점이 되었다면, 해당 선수는 퇴장(RC) 대신 반스포츠적 행위로 경고(YC)를 받습니다." },
+            { id: 2, title: "볼이 경기장을 벗어난 후 발생한 무모한 반칙의 처리", en_q: "An attacker (Team A) and a defender (Team B) are chasing the ball, which was last touched by the attacking team and is about to leave the field of play over the goal line. After the ball has wholly passed over the goal line, the defender recklessly pushes the attacker inside Team B’s penalty area. What is the correct decision?", ko_q: "공격수(A팀)와 수비수(B팀)가 볼을 쫓고 있으며, 볼은 공격팀에 의해 마지막으로 터치되어 골라인 밖으로 나가기 직전입니다. 볼 전체가 골라인을 완전히 넘어간 후, 수비수가 B팀 페널티 에어리어 안에서 공격수를 무모하게 밀쳤습니다. 올바른 판정은 무엇입니까?", en_a: "The defender is cautioned (yellow card) for unsporting behaviour. A penalty kick cannot be awarded because the reckless pushing offence occurred when the ball was not in play. Therefore, play is restarted with a goal kick to Team B.", ko_a: "수비수는 반스포츠적 행위로 경고(옐로카드)를 받습니다. 무모하게 밀치는 반칙이 볼이 인플레이 상황이 아닐 때 발생했으므로 페널티킥을 부여할 수 없습니다. 따라서 플레이는 B팀의 골킥으로 재개됩니다.", key_point: "볼이 아웃 오브 플레이인 상황에서 발생한 반칙으로는 플레이 재개 방법이 달라지지 않으며, 주심은 해당 반칙의 성격(무모함 등)에 따라 징계 조치만 취할 수 있습니다." },
+            { id: 3, title: "유망한 공격 저지 반칙 시 어드밴티지 적용과 징계 생략", en_q: "A defender commits a careless tackle on an opponent outside the penalty area that stops a promising attack. The referee applies advantage, as the ball goes to another attacker who runs into the penalty area and shoots. The ball goes over the crossbar without touching any other player. What is the correct decision?", ko_q: "수비수가 페널티 에어리어 밖에서 유망한 공격을 저지하는 조심성 없는 태클을 범했습니다. 주심은 볼이 페널티 에어리어로 달려 들어가 슈팅을 시도하는 다른 공격수에게 연결되자 어드밴티지를 적용했습니다. 볼은 다른 어떤 선수도 터치하지 않은 채 크로스바 위로 넘어갔습니다. 올바른 판정은 무엇입니까?", en_a: "Play is restarted with a goal kick. There is no disciplinary sanction for the defender because, by playing the advantage, the promising attack was restored, and the careless tackle itself does not warrant a caution.", ko_a: "골킥으로 플레이를 재개합니다. 어드밴티지를 적용함으로써 유망한 공격 기회가 회복되었고, 조심성 없는 태클 자체는 경고 대상이 아니므로 수비수에게 별도의 징계 조치는 내리지 않습니다.", key_point: "유망한 공격 방해(SPA) 반칙 상황에서 주심이 어드밴티지를 적용하여 공격이 지속되었다면, 해당 선수는 이후 경고를 받지 않습니다." },
+            { id: 4, title: "골킥 시 페널티 에어리어 안에 머물던 공격수의 득점 인정 여부", en_q: "An attacker does not control a pass from a team-mate, accidentally falls to the ground and the ball goes out for a goal kick. While the goalkeeper prepares to take the goal kick, the attacker gets up and runs away as quickly as possible. The goalkeeper kicks the ball when the attacker is still inside the penalty area with their back to the opponents’ goal. After that, the attacker intercepts the ball and scores a goal. What is the correct decision?", ko_q: "공격수가 동료의 패스를 컨트롤하지 못하고 실수로 지면에 넘어졌으며, 볼은 골킥을 위해 밖으로 나갔습니다. 골키퍼가 골킥을 준비하는 동안 공격수는 일어나서 가능한 한 빨리 달려 나갔습니다. 공격수가 상대 골문을 등진 채 여전히 페널티 에어리어 안에 있을 때 골키퍼가 볼을 킥했습니다. 그 후 공격수가 볼을 가로채어 득점을 기록했습니다. 올바른 판정은 무엇입니까?", en_a: "The goal is awarded. There is no offence as the attacker did not have enough time to leave the penalty area and was allowed to touch the ball once it was in play (kicked by the goalkeeper and clearly moved).", ko_a: "득점이 인정됩니다. 공격수가 페널티 에어리어에서 나갈 시간적 여유가 없었으며, 볼이 인플레이(골키퍼에 의해 킥되어 명백히 이동)된 후에는 볼을 터치하는 것이 허용되므로 반칙이 아닙니다.", key_point: "상대팀 선수가 골킥 시 페널티 에어리어 밖으로 나갈 시간적 여유가 없어 안에 머물러 있는 상태에서 골킥이 실시된 경우, 주심은 플레이를 계속하도록 허용합니다." },
+            { id: 5, title: "골킥 시 의도적으로 페널티 에어리어 내부에 남은 경우의 재개", en_q: "An attacker is inside the opponents’ penalty area when a goal kick is taken. The attacker does not make an effort to leave the penalty area and watches the goalkeeper and the ball. Once it is kicked, the attacker runs towards the ball to gain possession. What is the correct decision?", ko_q: "골킥을 할 때 공격수가 상대의 페널티 에어리어 안에 있습니다. 공격수는 페널티 에어리어를 떠나려는 노력을 하지 않고 골키퍼와 볼을 지켜봅니다. 볼이 킥되자 공격수는 소유권을 얻기 위해 볼을 향해 달립니다. 올바른 판정은 무엇입니까?", en_a: "The goal kick is retaken. Attacking players who deliberately remain in the penalty area should not gain an unfair advantage, even if the kick is taken quickly. It is not a yellow card offence unless the player persistently offends.", ko_a: "골킥을 다시 실시합니다. 의도적으로 페널티 에어리어 안에 남아 있는 공격 선수는 킥이 빠르게 진행되었더라도 부당한 이득을 취해서는 안 됩니다. 해당 선수가 지속적으로 규칙을 위반하지 않는 한 경고(옐로카드) 대상은 아닙니다.", key_point: "골킥 시 의도적으로 페널티 에어리어 안에 머물거나 들어와서 이득을 취한 선수가 있다면 골킥을 다시 실시해야 합니다." },
+            { id: 6, title: "빠른 골킥 후 페널티 에어리어 내 공격수의 터치와 득점", en_q: "A goalkeeper takes a quick goal kick when an opponent is still inside the penalty area as they did not have enough time to leave. The ball is kicked by the goalkeeper and accidentally hits the opponent who controls the ball and scores a goal. What is the correct decision?", ko_q: "골키퍼가 상대 선수가 밖으로 나갈 시간 여유가 없어 여전히 페널티 에어리어 안에 있는 상태에서 빠른 골킥을 실시했습니다. 볼은 골키퍼에 의해 킥되어 실수로 상대 선수에게 맞았고, 그 선수가 볼을 컨트롤하여 득점을 기록했습니다. 올바른 판정은 무엇입니까?", en_a: "The referee awards the goal.", ko_a: "주심은 득점을 인정합니다.", key_point: "골킥 시 나갈 시간이 부족해 페널티 에어리어 안에 있던 상대 선수에게 볼이 맞은 경우, 이는 반칙이 아니며 플레이는 그대로 진행됩니다." },
+            { id: 7, title: "골킥 시 규칙 위반을 목적으로 한 의도적 속임수", en_q: "At a goal kick the goalkeeper ‘flicks’ the ball up and a team-mate heads/chests the ball back for the goalkeeper to catch. What is the referee’s decision?", ko_q: "골킥 시 골키퍼가 볼을 위로 '띄우고', 동료 선수가 머리나 가슴으로 볼을 다시 골키퍼에게 패스하여 골키퍼가 잡도록 했습니다. 주심의 판정은 무엇입니까?", en_a: "The 'initiator' of this attempt to circumvent the Law is cautioned (yellow card) for unsporting behaviour. Play is restarted with an indirect free kick to the opposing team as outlined in Law 13.2 (depending on where the ball was ‘flicked’ up).", ko_a: "이러한 방식으로 경기규칙을 피하려 한 '의도적 속임수에 대한 책임이 있는 자'는 반스포츠적 행위로 경고(옐로카드)를 받습니다. 경기규칙 제13조 2항에 명시된 바와 같이 상대팀의 간접 프리킥으로 플레이를 재개합니다 (볼을 위로 '띄운' 지점에 따라 위치 결정).", key_point: "선수가 의도적인 속임수를 써서 골키퍼가 볼을 직접 손으로 터치하지 못하게 하는 규칙을 피하려 한다면, 반스포츠적 행위로 경고를 받으며 간접 프리킥이 주어집니다." },
+            { id: 8, title: "골라인 아웃 후 발생한 심한 반칙 플레이의 처리", en_q: "An attacker gets the ball close to the goal line and runs into the opponents’ penalty area. A defender commits a sliding tackle that endangers the safety of the attacker. What is the decision if the tackle occurs after the ball has wholly passed over the goal line (outside the goal, without touching any defender)?", ko_q: "공격수가 골라인 근처에서 볼을 잡아 상대 페널티 에어리어 안으로 달려 들어갔습니다. 수비수가 공격수의 안전을 위태롭게 하는 슬라이딩 태클을 범했습니다. 만약 이 태클이 (어떤 수비수도 터치하지 않고 골문 밖) 볼 전체가 골라인을 완전히 넘어간 후에 발생했다면 어떤 판정을 내려야 합니까?", en_a: "The defender is sent off (red card) for serious foul play. A penalty kick cannot be awarded because the ball was out of play at the time of the tackle. Play is restarted with a goal kick.", ko_a: "수비수는 심한 반칙 플레이로 퇴장(레드카드) 조치됩니다. 태클 당시 볼이 이미 아웃 오브 플레이 상태였으므로 페널티킥을 부여할 수 없습니다. 플레이는 골킥으로 재개됩니다.", key_point: "볼이 경기장을 벗어난 후에 일어난 신체적 접촉 반칙은 징계 조치만 가능하며, 프리킥이나 페널티킥으로 처벌할 수 없습니다." },
+            { id: 9, title: "골킥 인플레이 후 페널티 에어리어 진입 및 득점", en_q: "A goalkeeper (Team A) takes a goal kick and kicks the ball towards a defender (Team A) who is standing 10 metres away in their penalty area. After the ball is in play, an opposing player (Team B) enters the penalty area, intercepts the pass and scores a goal. What is the correct decision?", ko_q: "골키퍼(A팀)가 골킥을 실시하여 자신의 페널티 에어리어 안에서 10m 떨어진 곳에 서 있는 수비수(A팀)에게 볼을 킥했습니다. 볼이 인플레이가 된 후, 상대 선수(B팀)가 페널티 에어리어 안으로 들어와 패스를 가로채어 득점을 기록했습니다. 올바른 판정은 무엇입니까?", en_a: "The referee awards the goal. Law 16 requires that opponents must be outside the penalty area until the ball is in play (i.e. it is kicked and clearly moves) so Team B player has not committed an offence.", ko_a: "주심은 득점을 인정합니다. 경기규칙 제16조는 볼이 인플레이(즉, 킥이 되어 명백히 이동)될 때까지 상대 선수가 페널티 에어리어 밖에 있어야 한다고 규정하고 있으므로, B팀 선수는 반칙을 범하지 않은 것입니다.", key_point: "골킥 시 볼이 킥되어 명백하게 이동한 순간 인플레이가 되며, 그 이후에 상대 선수가 페널티 에어리어로 진입하는 것은 정당합니다." },
+            { id: 10, title: "인플레이 전 페널티 에어리어 침범 및 반칙", en_q: "A goal kick has been awarded to Team A. An opponent (Team B) enters the penalty area before the ball is kicked and fouls Team A player. What is the correct decision?", ko_q: "A팀에게 골킥이 주어졌습니다. 상대 선수(B팀)가 볼이 킥되기 전에 페널티 에어리어 안으로 들어와 A팀 선수를 상대로 반칙을 범했습니다. 올바른 판정은 무엇입니까?", en_a: "The goal kick is retaken because the ball was not in play at the time of the offence. The offender may be cautioned (yellow card) or sent off (red card), depending on the severity of the offence.", ko_a: "반칙 당시 볼이 인플레이 상황이 아니었으므로 골킥을 다시 실시합니다. 반칙을 범한 선수는 반칙의 심한 정도에 따라 경고(옐로카드) 또는 퇴장(레드카드) 조치될 수 있습니다.", key_point: "플레이 재개(골킥 등) 전의 반칙으로는 재개 방법이 달라지지 않으며, 절차 위반이나 신체적 반칙에 대한 징계만 주어집니다." },
+            { id: 11, title: "골킥 시 이중 터치 상황에서 어드밴티지 적용 및 경고", en_q: "While taking a goal kick, a goalkeeper slips on the grass. After the ball is in play, he/she kicks the ball a second time (before it has touched any other player) to deny an obvious goal-scoring opportunity. Unfortunately, the ball goes to an opposing player who scores a goal. What is the correct decision?", ko_q: "골킥을 하던 중 골키퍼가 잔디 위에서 미끄러졌습니다. 볼이 인플레이가 된 후, 골키퍼는 (다른 어떤 선수도 터치하기 전에) 명백한 득점 기회를 저지하기 위해 볼을 두 번째로 킥했습니다. 안타깝게도 볼은 상대 선수에게 전달되었고 그 선수가 득점을 기록했습니다. 올바른 판정은 무엇입니까?", en_a: "The referee plays the advantage, awards the goal and cautions (yellow card) the goalkeeper.", ko_a: "주심은 어드밴티지를 적용하여 득점을 인정하고 골키퍼에게 경고(옐로카드)를 줍니다.", key_point: "이중 터치 반칙으로 명백한 득점 기회를 저지했으나 어드밴티지로 인해 득점이 되었다면, 반칙 선수는 퇴장 대신 경고를 받습니다." },
+            { id: 12, title: "의도적으로 페널티 에어리어에 남은 상대의 가로채기 방지", en_q: "A goal kick is taken quickly by a player of defending Team A. An opponent (Team B) who deliberately remained in the penalty area tries to intercept the ball once it is in play. What is the referee’s decision?", ko_q: "수비팀인 A팀 선수가 빠른 골킥을 실시했습니다. 의도적으로 페널티 에어리어 안에 남아 있던 상대 선수(B팀)가 볼이 인플레이되자 가로채기를 시도했습니다. 주심의 판정은 무엇입니까?", en_a: "The goal kick is retaken. Players who deliberately remain inside or enter the penalty area before the kick is taken should not gain an unfair advantage, even if the kick is taken quickly.", ko_a: "골킥을 다시 실시합니다. 킥이 이루어지기 전 의도적으로 페널티 에어리어 안에 머물거나 들어온 선수는 킥이 빠르게 진행되었더라도 부당한 이득을 얻어서는 안 됩니다.", key_point: "빠른 골킥이라 하더라도, 의도적으로 페널티 에어리어 내부에 머물며 이득을 취하려는 상대 선수의 행위는 허용되지 않으며 킥을 다시 실시해야 합니다." },
+            { id: 13, title: "오프사이드 위치에 있던 선수가 관여 전 골라인 아웃된 경우", en_q: "An attacking player in an offside position runs towards the ball and does not touch the ball before it passes over the goal line for a goal kick. How is play restarted?", ko_q: "오프사이드 위치에 있는 공격 선수가 볼을 향해 달려갔으나, 볼이 골킥을 위해 골라인을 넘어가기 전까지 볼을 터치하지 않았습니다. 플레이는 어떻게 재개됩니까?", en_a: "A goal kick is awarded to the defending team, assuming the attacker does not impact an opponent.", ko_a: "공격수가 상대 선에게 영향을 주지 않았다고 가정할 때, 수비팀에게 골킥이 주어집니다.", key_point: "오프사이드 위치에 있는 것만으로는 반칙이 아니며, 볼을 터치하거나 상대 선수를 방해하기 전에 볼이 경기장 밖으로 나갔다면 오프사이드 반칙으로 처벌하지 않습니다." },
+            { id: 14, title: "골킥으로부터의 직접 득점 가능 여부", en_q: "May a goal be scored directly from a goal kick?", ko_q: "골킥으로부터 직접 득점이 가능합니까?", en_a: "Yes – but only against the opposing team. If the ball directly enters the kicker’s goal, a corner kick is awarded to the opponents.", ko_a: "네, 가능합니다. 하지만 오직 상대팀의 골문에 들어갔을 경우에만 해당됩니다. 만약 볼이 골킥을 한 선수의 팀 골문에 직접 들어갔다면 상대팀에게 코너킥이 주어집니다.", key_point: "골킥으로부터는 상대팀 골문에 직접 득점이 가능하지만, 자기 팀 골문에 직접 들어가면 득점으로 인정되지 않고 코너킥으로 재개합니다." },
+            { id: 15, title: "골키퍼가 페널티 에어리어 내에서 이중 터치 반칙을 범한 경우", en_q: "A goalkeeper takes a goal kick and then, before it has touched another player, the goalkeeper touches the ball again in the penalty area. How is play restarted? What is the sanction?", ko_q: "골키퍼가 골킥을 실시한 후, 다른 선수가 터치하기 전에 페널티 에어리어 안에서 볼을 다시 터치했습니다. 플레이는 어떻게 재개되며, 어떤 징계가 내려집니까?", en_a: "An indirect free kick is awarded to the opponents for playing the ball twice. If the offence denied an opponent a goal-scoring opportunity (DOGSO) or a promising attack (SPA) then the goalkeeper is appropriately sanctioned (even if the goalkeeper handled the ball): DOGSO = sent off (red card, RC), SPA = cautioned (yellow card, YC).", ko_a: "볼을 두 번 플레이한 이유로 상대팀에게 간접 프리킥이 주어집니다. 만약 이 반칙으로 상대의 명백한 득점 기회를 저지(DOGSO)했거나 유망한 공격을 방해(SPA)했다면, 골키퍼는 (손으로 볼을 다루었더라도) 그에 따른 적절한 징계를 받습니다: DOGSO = 퇴장(레드카드, RC), SPA = 경고(옐로카드, YC).", key_point: "골키퍼가 플레이 재개 후 다른 선수의 터치 없이 볼을 두 번 플레이하여 득점 기회나 유망한 공격을 저지했다면, 페널티 에어리어 안이더라도 징계 처벌 대상이 됩니다." },
+            { id: 16, title: "빠른 골킥 시 나갈 시간 여유가 없었던 상대의 볼 가로채기", en_q: "A goal kick is taken quickly by a player of defending Team A. An opponent (Team B) genuinely did not have time to leave the penalty area. May the opponent intercept the ball once it is in play?", ko_q: "수비팀인 A팀 선수가 골킥을 빠르게 실시했습니다. 상대 선수(B팀)가 정말로 페널티 에어리어를 떠날 시간적 여유가 없었습니다. 그 상대 선수가 볼이 인플레이된 후 볼을 가로채는 것이 허용됩니까?", en_a: "Yes, this is allowed because Team A tried to gain an advantage by taking the kick quickly and if this ‘goes wrong’ the Law is not there to ‘save’ them. However, an opponent (Team B) who deliberately remains in or enters the penalty area before the kick is taken should not gain an unfair advantage; if they do, the goal kick is retaken.", ko_a: "네, 허용됩니다. A팀이 킥을 빨리 처리하여 어드밴티지를 얻으려 했으므로, 만약 이것이 '잘못되어' 상대에게 볼을 뺏기더라도 경기규칙이 그들을 '구제'해주지는 않기 때문입니다. 하지만 의도적으로 페널티 에어리어 안에 머물거나 들어온 상대 선수(B팀)는 부당한 이득을 얻어서는 안 되며, 그런 경우에는 골킥을 다시 실시합니다.", key_point: "빠른 골킥 시 시간 여유가 없어 페널티 에어리어 안에 남아 있던 상대 선수가 인플레이 상황의 볼을 가로채는 것은 정당한 플레이로 인정됩니다." }
+        ],
+        "corner-kick": [
+            { id: 1, title: "골킥 상황에서 페널티 에어리어 내 수비수의 반칙 판정", en_q: "A goalkeeper takes a goal kick and plays the ball towards a defender who is inside their penalty area, facing the goalkeeper and unaware of an opposing attacker waiting outside the penalty area. After the ball is kicked and clearly moves, the attacker quickly runs into the penalty area and is about to intercept the ball. The defender then makes a late challenge and carelessly fouls the attacker. What is the correct decision?", ko_q: "골키퍼가 골킥을 실시하여 자신의 페널티 에어리어 안에 있는 수비수에게 볼을 패스했습니다. 수비수는 골키퍼를 마주 보고 있었으며 페널티 에어리어 밖에서 대기 중인 상대 공격수를 인지하지 못했습니다. 볼이 킥되어 명백하게 이동한 후, 공격수는 빠르게 페널티 에어리어 안으로 달려와 볼을 가로채려 했습니다. 이때 수비수가 늦게 도전하며 공격수에게 조심성 없는 반칙을 범했습니다. 올바른 판정은 무엇입니까?", en_a: "The referee awards a penalty kick. The defender is cautioned (yellow card) if the illegal challenge for the ball denied the attacker an obvious goal-scoring opportunity. Law 16 – The Goal Kick requires opponents to be outside the penalty area until the ball is in play, so the attacker has not committed an offence.", ko_a: "주심은 페널티킥을 부여합니다. 만약 볼에 대한 불법적인 도전으로 공격수의 명백한 득점 기회를 저지했다면 수비수는 경고(옐로카드)를 받습니다. 경기규칙 제16조 골킥 항은 볼이 인플레이될 때까지 상대 선수가 페널티 에어리어 밖에 있어야 한다고 규정하고 있으므로, 공격수는 반칙을 범한 것이 아닙니다.", key_point: "골킥은 볼이 킥되어 명백히 이동했을 때 인플레이가 되며, 인플레이 이후 페널티 에어리어 안에서 발생한 신체 접촉 반칙은 그 성격에 따라 페널티킥 및 징계 조치의 대상이 됩니다." },
+            { id: 2, title: "슛 차단 중 손이나 팔에 볼이 맞았으나 핸드볼이 아닌 경우의 판정", en_q: "A defender approaches an attacker to block their shot on goal. While attempting to do so, the defender moves their left hand/arm towards their body to avoid handling the ball. Despite this, the ball touches the hand/arm, which is placed on the defender’s chest, and then goes out over the goal line without touching any other player (no goal is scored). What is the correct decision?", ko_q: "수비수가 공격수의 슈팅을 차단하기 위해 접근했습니다. 그 과정에서 수비수는 핸드볼 반칙을 피하기 위해 자신의 왼쪽 손/팔을 몸쪽으로 움직였습니다. 그럼에도 불구하고 볼은 수비수의 가슴 위에 놓인 손/팔에 맞았고, 이후 다른 어떤 선수도 터치하지 않은 채 골라인 밖으로 나갔습니다(득점은 되지 않음). 올바른 판정은 무엇입니까?", en_a: "This is not a handball offence because the defender did not deliberately handle the ball, and their left hand/arm was close to the body, not making it unnaturally bigger. Play is restarted with a corner kick.", ko_a: "이는 핸드볼 반칙이 아닙니다. 수비수가 의도적으로 볼을 손으로 다루지 않았고, 왼쪽 손/팔이 몸에 밀착되어 신체를 부자연스럽게 확대하지 않았기 때문입니다. 플레이는 코너킥으로 재개됩니다.", key_point: "핸드볼 반칙을 결정할 때 손/팔의 위치가 선수의 동작으로 정당화될 수 있거나 신체를 부자연스럽게 확대하지 않았다면 반칙으로 간주하지 않습니다." },
+            { id: 3, title: "코너킥 시 볼이 코너 아크 라인 위에 공중으로 걸쳐 있는 경우의 판정", en_q: "Before a corner kick is taken, the assistant referee notices that the ball is over the corner arc (in the air) but does not touch the corner area. What is the correct decision?", ko_q: "코너킥을 실시하기 전, 부심은 볼이 코너 아크 위에 (공중에) 떠 있지만 코너 에어리어 지면에는 닿지 않은 것을 인지했습니다. 올바른 판정은 무엇입니까?", en_a: "The corner kick is allowed to be taken. Law 17 does not require the entire ball to be inside the corner area or for it to be touching the line (arc) or the ground inside the line. As long as part of the ball is overhanging the corner line (arc), its position is correct.", ko_a: "코너킥 실시를 허용합니다. 경기규칙 제17조는 볼 전체가 코너 에어리어 안에 있거나 라인(아크) 또는 라인 안쪽 지면에 닿을 것을 요구하지 않습니다. 볼의 일부라도 코너 아크 라인 위로 수직으로 걸쳐 있다면, 그 위치는 정확한 것입니다.", key_point: "코너킥 시 볼은 반드시 코너 아크 안에 놓여야 하며, 이때 볼의 일부가 라인에 닿거나 라인 위로 수직으로 걸쳐 있으면 정당한 위치로 인정됩니다." },
+            { id: 4, title: "코너킥 재개 전 발생한 신체적 반칙에 대한 판정 및 재개", en_q: "A player of Team A prepares to take a corner kick. At the same time, one of their team-mates challenges for position with a defender (Team B) and is pushed by the opponent before the ball has been touched by the kicker. What is the correct decision?", ko_q: "A팀 선수가 코너킥을 준비하고 있습니다. 동시에 A팀 동료 선수 한 명이 B팀 수비수와 위치 다툼을 벌이던 중, 키커가 볼을 터치하기 전에 상대 수비수에게 밀려 넘어졌습니다. 올바른 판정은 무엇입니까?", en_a: "The defender can be warned, cautioned (yellow card) or sent off (red card), depending on the severity of the push. Play is restarted with the (original) corner kick because a penalty kick cannot be awarded as the ball was not in play at the time of the offence.", ko_a: "수비수는 미는 행위의 심한 정도에 따라 주의, 경고(옐로카드) 또는 퇴장(레드카드) 조치를 받을 수 있습니다. 반칙 당시 볼이 인플레이 상황이 아니었으므로 페널티킥을 부여할 수 없으며, 플레이는 원래의 코너킥으로 재개됩니다.", key_point: "볼이 아웃 오브 플레이인 상황에서 발생한 반칙은 징계 조치의 대상은 될 수 있으나, 플레이 재개 방법(원래 주어졌던 킥)을 바꾸지는 않습니다." },
+            { id: 5, title: "코너킥 상황에서 상대 선수의 거리 미준수 및 방해에 대한 판정", en_q: "When a corner kick is taken, a defending team player is closer than 9.15 m from the corner arc and interferes with the player who is taking the kick. What is the correct decision?", ko_q: "코너킥을 할 때, 수비팀 선수가 코너 아크에서 9.15m 이내의 거리에 머물며 킥을 하는 선수를 방해했습니다. 올바른 판정은 무엇입니까?", en_a: "The corner kick is retaken, unless the referee plays advantage (if such an opportunity arises). The defending team player is cautioned (yellow card) for failing to respect the required distance.", ko_a: "주심이 어드밴티지를 적용하지 않는 한(그러한 기회가 발생할 경우), 코너킥을 다시 실시합니다. 규정된 거리를 지키지 않은 수비팀 선수에게는 경고(옐로카드)가 주어집니다.", key_point: "코너킥 시 상대 선수들은 볼이 인플레이될 때까지 코너 아크에서 최소 9.15m(10야드) 떨어져 있어야 합니다." },
+            { id: 6, title: "다시 플레이하기 위해 의도적으로 볼을 상대에게 찼을 때의 판정", en_q: "A player intentionally kicks the ball at an opponent in order to play the ball again. What is the referee's decision?", ko_q: "선수가 볼을 다시 플레이하기 위한 목적으로 의도적으로 상대 선수에게 볼을 찼습니다. 주심의 판정은 무엇입니까?", en_a: "The referee allows play to continue unless the ball was kicked in a careless or reckless manner or using excessive force, in which event a direct free kick is awarded to the opponents.", ko_a: "주심은 플레이를 계속하도록 허용합니다. 단, 볼을 조심성 없거나 무모한 태도, 또는 과도한 힘을 사용하여 찬 것이 아니어야 합니다. 만약 그러한 태도로 찼다면 상대팀에게 직접 프리킥이 주어집니다.", key_point: "경기를 재개할 때 다시 플레이할 목적으로 상대에게 볼을 차는 행위는 허용되지만, 그 과정에서 무모하거나 과도한 신체적 충격을 가하는 방식의 반칙이 수반되어서는 안 됩니다." }
+        ]
+    };
+
+    function createAccordionItem(item, icon) {
+        return `
+            <div class="accordion-item bg-slate-800/50 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden scroll-target">
+                <button class="accordion-header w-full text-left p-4 md:p-6 flex justify-between items-center transition-colors duration-300">
+                    <span class="font-semibold text-lg text-slate-100">${icon} ${item.id}. ${item.title}</span>
+                    <span class="accordion-icon text-cyan-400 transform transition-transform duration-300 text-2xl font-light">+</span>
+                </button>
+                <div class="accordion-body max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="p-4 md:p-6 border-t border-slate-700 space-y-4">
+                        <div class="p-4 rounded-md bg-slate-900/50">
+                            <p class="font-bold text-slate-400 mb-2">❓ Situation (EN)</p>
+                            <p class="text-slate-300 italic">${item.en_q}</p>
+                        </div>
+                        <div class="p-4 rounded-md bg-slate-900/50">
+                            <p class="font-bold text-slate-400 mb-2">❓ 상황 (KR)</p>
+                            <p class="text-slate-300">${item.ko_q}</p>
+                        </div>
+                         <div class="p-4 rounded-md bg-green-900/30 border-l-4 border-green-500">
+                            <p class="font-bold text-green-400 mb-2">✅ Decision (EN)</p>
+                            <p class="text-slate-300 italic">${item.en_a}</p>
+                        </div>
+                        <div class="p-4 rounded-md bg-green-900/30 border-l-4 border-green-500">
+                            <p class="font-bold text-green-400 mb-2">✅ 판정 (KR)</p>
+                            <p class="text-slate-300">${item.ko_a}</p>
+                        </div>
+                         <div class="p-4 rounded-md bg-cyan-900/30 border-l-4 border-cyan-400">
+                            <p class="font-bold text-cyan-300 mb-2">🔑 핵심포인트</p>
+                            <p class="text-slate-200 font-medium">${item.key_point}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const throwInContainer = document.getElementById('throw-in-content');
+        const goalKickContainer = document.getElementById('goal-kick-content');
+        const cornerKickContainer = document.getElementById('corner-kick-content');
+
+        throwInContainer.innerHTML = qaData['throw-in'].map(item => createAccordionItem(item, '⚽')).join('');
+        goalKickContainer.innerHTML = qaData['goal-kick'].map(item => createAccordionItem(item, '🥅')).join('');
+        cornerKickContainer.innerHTML = qaData['corner-kick'].map(item => createAccordionItem(item, '🚩')).join('');
+
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const targetId = button.dataset.target;
+                tabContents.forEach(content => {
+                    if (content.id === targetId) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+                // Re-initialize observer for the new visible content
+                initObserver();
+            });
+        });
+
+        // Accordion functionality
+        document.body.addEventListener('click', function(event) {
+            const header = event.target.closest('.accordion-header');
+            if (!header) return;
+
+            const accordionItem = header.parentElement;
+            const body = header.nextElementSibling;
+            const icon = header.querySelector('.accordion-icon');
+            
+            if (body.style.maxHeight) {
+                body.style.maxHeight = null;
+                icon.textContent = '+';
+                icon.classList.remove('rotate-45');
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px";
+                icon.textContent = '+';
+                icon.classList.add('rotate-45');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        let observer;
+        function initObserver() {
+            if (observer) observer.disconnect();
+            
+            const targets = document.querySelectorAll('.scroll-target:not(.is-visible)');
+            
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+        }
+        
+        initObserver();
+    });
+    </script>
+
+</body>
+</html>
